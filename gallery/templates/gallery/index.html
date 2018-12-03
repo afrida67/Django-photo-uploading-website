@@ -1,0 +1,12 @@
+{% if all_photos%}
+    <h3>User's Uploaded Pictures</h3>
+    <ul>
+        {% for album in all_photos %}
+            <li><a href="{% url 'gallery:detail' album.id %}">{{ album.hashtag }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <h3>you have no pictures</h3>
+
+{% endif %}
