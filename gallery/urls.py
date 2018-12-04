@@ -10,5 +10,7 @@ urlpatterns = [
     path('<pk>',views.DetailView.as_view(), name='detail'),
     # /gallery/album/add
     path('album/add',views.AlbumCreate.as_view(), name='album-add'),
+    # /gallery/album/1/delete
+    path('album<pk>/delete',views.AlbumDelete.as_view(), name='album-delete'),
 ]
  

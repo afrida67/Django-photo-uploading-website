@@ -1,6 +1,6 @@
 from django.views import generic
 from . models import Album
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from django.urls import reverse_lazy
 class IndexView(generic.ListView):
     template_name = 'gallery/index.html'
@@ -17,6 +17,10 @@ class DetailView(generic.DetailView):
 class AlbumCreate(CreateView):
         model = Album
         fields = ['caption', 'hashtag', 'photo']
+
+class AlbumDelete(DeleteView):
+        model = Album
+        success_url = reverse_lazy('gallery:index')
         
 
 
