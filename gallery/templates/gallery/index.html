@@ -1,19 +1,27 @@
 {% extends 'gallery/base.html' %}
-   <title>{% block title%}User Photos{% endblock %}</title>
 
 {% block body%}  
 
-{% if all_photos%}
-    <h3>User's Uploaded Pictures</h3>
-    <ul>
-        {% for album in all_photos %}
-            <li><a href="{% url 'gallery:detail' album.id %}">{{ album.hashtag }}</a></li>
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for album in all_photos%}
 
-{% else %}
-    <h3>you have no pictures</h3>
+                <div class="col-sm-4 col-lg-2">
+                    <div class="thumbnail">
+                        <a href="{% url 'gallery:detail' album.id %}">
+                            <img src="{{ album.photo.url }}" class="img-responsive">
+                        </a>
+                        <div class="caption">
+                            <h2>{{ album.caption }}</h2>
+                            <h4>{{ album.hashtag }}</h4>
+                        </div>
+                   
 
-{% endif %}
+         <!-- View Details -->
+            <a href="{% url 'gallery:detail' album.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+             </div>
+
+        </div>
+            {% endfor %}
+        </ul>                 
 
 {% endblock %}
