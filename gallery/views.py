@@ -3,7 +3,6 @@ from . models import Album
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 class IndexView(generic.ListView):
-
     template_name = 'gallery/index.html'
     # by default  context_object_name is object_list
     context_object_name = 'all_photos'

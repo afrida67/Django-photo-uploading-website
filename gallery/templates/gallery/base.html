@@ -25,11 +25,18 @@
                         <span class="icon-bar"></span> 
                     </button>
                        
-                    <a class="navbar-brand" href="{% url 'gallery:index' %}"> <span class="fab fa-instagram" aria-hidden="true"></span> Triplet</a>  
-                 
-                     
-                             
+                    <a class="navbar-brand" href="{% url 'gallery:index' %}"> <span class="fab fa-instagram" aria-hidden="true"></span> Triplet</a>                                                                    
                 </div>      
+
+            <!--upload image-->
+
+                <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="{% url 'gallery:album-add' %}">
+                                 <span class="fa fa-upload" aria-hidden="true"></span>&nbsp;Upload Image
+                             </a>
+                        </li>
+                </ul>
         
             </div>
         
