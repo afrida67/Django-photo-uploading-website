@@ -1,3 +1,8 @@
+{% extends 'gallery/base.html' %}
+   <title>{% block title%}User Photos{% endblock %}</title>
+
+{% block body%}  
+
 {% if all_photos%}
     <h3>User's Uploaded Pictures</h3>
     <ul>
@@ -10,3 +15,5 @@
     <h3>you have no pictures</h3>
 
 {% endif %}
+
+{% endblock %}

@@ -1,6 +1,11 @@
+{% extends 'gallery/base.html' %}
+   <title>{% block title%}User Photos{% endblock %}</title>
 
 
-<img src="{{ album.photo }}">
-<h1>{{ album.hashtag }}</h1>
-<h3>{{ album.caption }}</h3>
+{% block body%}  
 
+    <img src="{{ album.photo }}">
+    <h2>{{ album.hashtag }}</h2>
+    <h3>{{ album.caption }}</h3>
+
+{% endblock %}
