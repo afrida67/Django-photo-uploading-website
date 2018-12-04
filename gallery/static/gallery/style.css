@@ -18,3 +18,8 @@ body{
     margin-right: auto;
     width: 70%;
 }
+.deleteB{
+    position: relative;
+    top: -100px;
+    left: 435px;
+}
