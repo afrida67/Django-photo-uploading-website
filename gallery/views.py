@@ -1,14 +1,30 @@
-from django.shortcuts import render
+from django.views import generic
 from . models import Album
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
-# Create your views here.
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
+class IndexView(generic.ListView):
 
-def index(request):
-    all_photos = Album.objects.all() 
-    return render(request, 'gallery/index.html', {'all_photos' : all_photos})
+    template_name = 'gallery/index.html'
+    # by default  context_object_name is object_list
+    context_object_name = 'all_photos'
 
-def detail(request, album_id):
-    album = get_object_or_404(Album, pk=album_id)
-    return render(request, 'gallery/detail.html', {'album' : album})
-   
+    def get_queryset(self):
+        return Album.objects.all()
+
+class DetailView(generic.DetailView):
+        model = Album
+        template_name = 'gallery/detail.html'
+
+class AlbumCreate(CreateView):
+        model = Album
+        fields = ['caption', 'hashtag', 'photo']
+        
+
+
+
+
+
+
+
+
+
