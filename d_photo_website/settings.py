@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig',
     'gallery.apps.GalleryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,6 +121,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets'),
+)
 #global variable for upload files
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
