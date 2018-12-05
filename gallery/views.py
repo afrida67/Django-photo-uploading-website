@@ -29,6 +29,9 @@ def album_create(request):
             form = forms.CreatePhoto(request.POST, request.FILES)
             if form.is_valid():
                   #save photos to db
+                  instance = form.save(commit=False)
+                  instance.uploader = request.user
+                  instance.save()
                   return redirect('gallery:index')
       else:
              form = forms.CreatePhoto()
