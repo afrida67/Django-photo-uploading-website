@@ -8,7 +8,6 @@
 
         <form action="{% url 'gallery:album-delete' album.id %}" method="post" >
         <img src="{{ album.photo.url }}" height="442" width="512">
-         <h2>#{{ album.hashtag }}</h2>
          <h3>{{ album.caption }}</h3>
             {% csrf_token %}
             <input type="hidden" name="album_id" value="{{ album.id }}" />
