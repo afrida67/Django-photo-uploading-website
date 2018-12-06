@@ -18,3 +18,8 @@ a, a:hover, a:visited{
     color: #fff;
     text-decoration: none;
 }
+
+.wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+}
