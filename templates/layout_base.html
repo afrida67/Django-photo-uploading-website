@@ -8,19 +8,13 @@
     <body>
         <header class="wrapper">
             <h1><a href="#"><img src="{% static 'logo.png'%}" height="62" width="62"/></a></h1>
-            <nav>
-                <ul>             
-                     <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                                                    
-                </ul>
-            </nav>
         </header>
 
         <div class="wrapper">
 
             {% block content %}
             {% endblock %}
-
         </div>
+
     </body>
 </html>

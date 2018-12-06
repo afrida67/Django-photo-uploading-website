@@ -6,22 +6,20 @@
 
    <div class="center">
 
-        <form action="{% url 'gallery:album-delete' album.id %}" method="post" >
         <img src="{{ album.photo.url }}" height="442" width="512">
          <h3>{{ album.caption }}</h3>
-            {% csrf_token %}
+
+      {% if request.user == album.uploader %}
+        <form action="{% url 'gallery:album-delete' album.id %}" method="post" >
+                  {% csrf_token %}
             <input type="hidden" name="album_id" value="{{ album.id }}" />
             <button type="submit" class="deleteB">delete
                  <span class="glyphicon glyphicon-trash"></span>
-            </button>
-            
-
+            </button>            
         </form>
-
-
+      {% endif %}
+  
     </div>
 
     
-
-
 {% endblock %}

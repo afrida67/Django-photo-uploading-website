@@ -1,7 +1,7 @@
 body{
     background-color: #0f121f;
-    background-image: url(bg.jpg);
-    background-repeat-y: no-repeat;
+    background-image: url(bg2.png);
+    background-size: cover;
     color: #fff;
 }
 
@@ -22,4 +22,21 @@ a, a:hover, a:visited{
 .wrapper{
     max-width: 960px;
     margin: 0 auto;
+}
+.site-form {
+    margin-top: 60px;
+ 
+    padding: 20px;
+    color: black;
+}
+
+.site-form input, .site-form textarea{
+    display: block;
+    margin: 20px 0 0px 0;
+    padding: 10px;
+}
+.color-title{
+    font-family: 'Satisfy', cursive;
+    font-size: 40px;
+    color: #b71c1c;
 }

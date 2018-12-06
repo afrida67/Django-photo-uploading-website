@@ -5,14 +5,14 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from . import forms
 from django.shortcuts import render, redirect
-
+from django.shortcuts import get_object_or_404
 class IndexView(generic.ListView):
     template_name = 'gallery/index.html'
     # by default  context_object_name is object_list
     context_object_name = 'all_photos'
 
     def get_queryset(self):
-        return Album.objects.all()
+        return Album.objects.all().order_by('-date')
 
 class DetailView(generic.DetailView):
         model = Album
@@ -36,10 +36,6 @@ def album_create(request):
       else:
              form = forms.CreatePhoto()
       return render(request,'gallery/upload.html',{'form':form})
-
-
-        
-
 
 
 
