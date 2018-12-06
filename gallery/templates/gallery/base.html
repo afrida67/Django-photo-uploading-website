@@ -32,13 +32,28 @@
             <!--upload image-->
 
                 <ul class="nav navbar-nav navbar-right">
+                         <li class="">
+                            <a href="#">
+                                 <span class="fas fa-user" aria-hidden="true"></span>&nbsp;{{ request.username }}
+                             </a>
+                        </li>
+
                         <li class="">
                             <a href="{% url 'gallery:create' %}">
                                  <span class="fa fa-upload" aria-hidden="true"></span>&nbsp;Upload Image
                              </a>
                         </li>
-                </ul>
-        
+
+                        <li class="">
+                            <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                         <!--whenever post method use csrf for security purpose-->
+                            {% csrf_token %}
+                            
+                          <button type="submit"><span class="fas fa-sign-out-alt" aria-hidden="true"></span>Logout</button>
+
+                         </form>                         
+                    </li>
+                </ul>        
             </div>
         
         </nav>
