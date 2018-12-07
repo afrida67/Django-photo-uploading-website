@@ -36,11 +36,3 @@ def album_create(request):
       else:
              form = forms.CreatePhoto()
       return render(request,'gallery/upload.html',{'form':form})
-
-
-
-
-
-
-
-

@@ -7,8 +7,9 @@ class Album(models.Model):
     
     caption = models.TextField()
     photo = models.FileField()
-    date = models.DateTimeField(auto_now_add=True)
     uploader = models.ForeignKey(User,on_delete=models.CASCADE,default=None)
+    date = models.DateTimeField(auto_now_add=True)
+    likes = models.ManyToManyField(User, related_name='likes', blank=True)
    # photo = models.CharField(max_length=1000)
 
     def __str__(self):
