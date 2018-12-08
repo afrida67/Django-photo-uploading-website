@@ -52,6 +52,7 @@ def detail(request,album_id):
         }
         return render(request, 'gallery/detail.html', context)
 
+@login_required(login_url="/accounts/login/")
 
 def like_post(request):
     album = get_object_or_404(Album, id=request.POST.get('album_id'))
@@ -62,10 +63,3 @@ def like_post(request):
         album.likes.add(request.user)
         is_liked = True
     return HttpResponseRedirect(album.get_absolute_url())
-
-
-'''def like_post(request):
-        post = get_object_or_404(Album, id=request.POST.get('album_id'))
-        post.likes.add(request.user)
-        return HttpResponseRedirect(post.get_absolute_url())
-'''
