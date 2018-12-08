@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="create-photo">
-        <h2>Upload a new Photo</h2>
+        <h2 style="color:#000;">Upload a new Photo</h2>
           <form class="site-form" action="{% url 'gallery:create' %}" method="post" enctype="multipart/form-data">
              {% csrf_token %}
             {{ form }}

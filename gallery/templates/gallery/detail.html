@@ -3,35 +3,39 @@
 
 
 {% block body%}  
-
    <div class="center">
+        <div class="album-detail">
+            <div class="album">
 
         <img src="{{ album.photo.url }}" height="442" width="512">
          <h3>{{ album.caption }}</h3>
-
-      {% if request.user == album.uploader %}
-        <form action="{% url 'gallery:album-delete' album.id %}" method="post" >
-                  {% csrf_token %}
-            <input type="hidden" name="album_id" value="{{ album.id }}" />
-            <button type="submit" class="deleteB">delete
-                 <span class="glyphicon glyphicon-trash"></span>
-            </button>            
-        </form>
-      {% endif %}
-      
-  {{ total_likes}} Like{{ total_likes|pluralize }}
+   <h5>{{ total_likes}} Like{{ total_likes|pluralize }} <h5>
+    <h6>{{ album.date }}</h6>
   
       <!--like option adding-->
         <form action="{% url 'gallery:like_post' %}" method="post" >
               {% csrf_token %}
               {% if is_liked %}
-            <button type="submit" name="album_id" value="{{album.id}}" class="btn btn-danger">DisLike</button>   
+            <button type="submit" name="album_id" value="{{album.id}}" class="btn btn-danger like">DisLike</button>  
+            
              {% else %} 
-                <button type="submit" name="album_id" value="{{album.id}}" class="btn btn-primary">Like</button> 
+                <button type="submit" name="album_id" value="{{album.id}}" class="btn btn-primary like">Like</button> 
+              
               {% endif %}        
         </form>
   
+              {% if request.user == album.uploader %}
+        <form action="{% url 'gallery:album-delete' album.id %}" method="post" >
+                  {% csrf_token %}
+            <input type="hidden" name="album_id" value="{{ album.id }}" />
+            <button type="submit" class="btn-danger deleteB">Delete
+                 <span class="glyphicon glyphicon-trash"></span>
+            </button>            
+        </form>
+      {% endif %}
+      
+  </div>
     </div>
-
+  </div>
     
 {% endblock %}

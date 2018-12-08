@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title%}Triplet{% endblock %}</title>
+    <title>{% block title%} Triolet{% endblock %}</title>
     {% load staticfiles %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -43,15 +43,18 @@
                                  <span class="fa fa-upload" aria-hidden="true"></span>&nbsp;Upload Image
                              </a>
                         </li>
-
-                        <li class="">               
+               
+                        <li class=""> 
+                           
                             <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                          <!--whenever post method use csrf for security purpose-->
                             {% csrf_token %}                            
-                          <button type="submit"><span class="fas fa-sign-out-alt" aria-hidden="true"></span>Logout</button>
-                          
-                         </form>                         
+                          <button type="submit" class="button"><span class="fas fa-sign-out-alt" aria-hidden="true"></span>Logout</button>
+                            
+                         </form>  
+                                            
                     </li>
+                 
                 </ul>        
             </div>
         

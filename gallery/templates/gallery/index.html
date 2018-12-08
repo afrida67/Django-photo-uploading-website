@@ -6,18 +6,18 @@
    {% for album in all_photos%}
 
    <div class="thumbnail">
-
+ <div class="albums">
       <a href="{% url 'gallery:detail' album.id %}">
       <img src="{{ album.photo.url }}" class="img-responsive" height="442" width="492">
       </a>
-
       <div class="caption">
-          <span class="fas fa-user" aria-hidden="true"></span>&nbsp;{{  album.uploader.username }}
+         uploaded by <span class="fas fa-user" aria-hidden="true"></span>&nbsp;{{  album.uploader.username }}
+         <p>{{ album.date }}</p>
          <a href="{% url 'gallery:detail' album.id %}"></a> 
       </div>
 
    </div>
-
+   </div>
    {% endfor %}
 </div>
 {% endblock %}

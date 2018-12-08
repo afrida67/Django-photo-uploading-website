@@ -17,7 +17,71 @@
 }
 .deleteB{
     position: relative;
-    top: -100px;
-    left: 435px;
+    top: -120px;
+    margin-left: 110px;
+    left: 330px;
 }
 
+button, input, select, textarea {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    position: relative;
+    top:15px;
+    color: inherit;
+}
+
+
+
+.albums{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.album{
+    padding: 10px;
+
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.album h2{
+    font-size: 1.2em;
+}
+
+.album .uploader{
+    padding: 10px;
+    background: #00dba0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    color: #0f121f;
+}
+
+.album-detail .album{
+    padding: 0;
+}
+
+.album-detail  .album img{
+    max-width: 100%;
+}
+
+.album-detail .album h4{
+    text-align: left;
+}
+.album-detail .album h5{
+    text-align: center;
+}
+.album-detail .album h6{
+    text-align: center;
+}
+
+.like{
+    position: relative;
+    top:-50px;
+}
